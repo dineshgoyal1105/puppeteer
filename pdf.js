@@ -15,7 +15,7 @@ async function downloadPdfFromUrl(url, outputPath) {
 }
 
 const targetUrl = "http://localhost:63342/puppetter/index2.html?_ijt=og9rorig9cotnji85furbkl24g";
-const outputFile = "downloaded_page2.pdf";
+const outputFile = "downloaded_page.pdf";
 
 downloadPdfFromUrl(targetUrl, outputFile)
     .then(() => console.log(`PDF downloaded successfully at: ${outputFile}`))
