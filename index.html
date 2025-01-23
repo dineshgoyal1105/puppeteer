@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Example</title>
+</head>
+<body>
+
+<h1>File Upload Form</h1>
+
+<!-- Simple File Upload Form -->
+<form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+    <label for="file">Choose a file to upload:</label>
+    <input type="file" id="file" name="file" accept="image/*" required>
+    <button type="submit" id="submit-button">Upload</button>
+</form>
+
+<!-- Success Message (appears after file upload) -->
+<div id="upload-success-message" style="display:none;">
+    <p>File uploaded successfully!</p>
+    <p>Download your file: <a id="download-link" href="#">Download</a></p>
+</div>
+
+<!-- Add some simple JavaScript for mock upload success -->
+<script>
+    const form = document.getElementById('upload-form');
+    const successMessage = document.getElementById('upload-success-message');
+    const downloadLink = document.getElementById('download-link');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the actual form submission for testing
+
+        // Mock file upload success
+        setTimeout(() => {
+            successMessage.style.display = 'block';
+            downloadLink.href = 'https://example.com/your-uploaded-file.jpg'; // Replace with actual file URL after upload
+        }, 1000); // Simulate a 1 second delay for upload
+    });
+</script>
+
+</body>
+</html>
